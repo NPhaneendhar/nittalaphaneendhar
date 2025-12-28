@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Search Console verification -->
+  <meta name="google-site-verification" content="vnVgz-zTTxtTiWzhJk964-cw0z8mvyD8OVIXQrIRROw">
+
+  <!-- SEO Identity -->
+  <title>PhaneendharNittala | Digital Forensics & Cyber Security</title>
+
+  <meta name="description" content="PhaneendharNittala – Portfolio of Phaneendhar Nittala, a Digital Forensics and Cyber Security specialist focusing on OSINT, cyber investigations, and forensic web tools like PHANIX.">
+
+  <meta name="keywords" content="PhaneendharNittala, Phaneendhar Nittala, Digital Forensics, Cyber Security, OSINT, Cyber Investigation, PHANIX, Forensic Science">
+
+  <meta name="author" content="Phaneendhar Nittala">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%231a73e8'/%3E%3Cstop offset='100%25' stop-color='%230d47a1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='256' cy='256' r='256' fill='url(%23g)'/%3E%3Ctext x='50%25' y='50%25' dy='.35em' text-anchor='middle' font-family='sans-serif' font-weight='bold' font-size='300' fill='white'%3EP%3C/text%3E%3C/svg%3E">
+
+  <!-- Structured Data for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Phaneendhar Nittala",
+    "alternateName": "PhaneendharNittala",
+    "url": "https://nphaneendhar.github.io",
+    "jobTitle": "Digital Forensics & Cyber Security Specialist",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Centurion University"
+    },
+    "sameAs": [
+      "https://nphaneendhar.github.io"
+    ]
+  }
+  </script>
+</head>
+
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Smooth color transition for icons */
+        .cv-btn i {
+            transition: color 0.3s ease;
+        }
+
+        /* Eye Icon: Blue default -> Red on hover */
+        .cv-btn .fa-eye { color: #1a73e8; }
+        .cv-btn:hover .fa-eye { color: #158394; }
+
+        /* Download Icon: Default -> Green on hover */
+        .cv-btn .fa-download { color: #1f76b4; }
+        .cv-btn:hover .fa-download { color: #07829b; }
+
+        /* LinkedIn Official Blue */
+        .fa-linkedin { color: #0077b5; }
+
+        /* Fix for scrolling on short screens (PC/Mobile) */
+        .about-card, .skills-card, .education-card, .projects-card, .contact-card {
+            position: fixed !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%); /* Removed !important to allow animation */
+            max-height: 85vh !important;
+            max-height: 85dvh !important; /* Better mobile height calculation */
+            overflow-y: auto !important;
+            width: 90% !important;
+            max-width: 1000px;
+            z-index: 2000;
+            box-sizing: border-box !important;
+            padding-bottom: 100px !important; /* Ensure content isn't cut off at bottom */
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain; /* Prevents background scrolling */
+            animation: slideInDesktop 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes slideInDesktop {
+            from { transform: translate(150%, -50%); opacity: 0; }
+            to { transform: translate(-50%, -50%); opacity: 1; }
+        }
+
+        /* Mobile: Open cards as a full-screen "separate" view */
+        @media screen and (max-width: 768px) {
+            .about-card, .skills-card, .education-card, .projects-card, .contact-card {
+                top: 0 !important;
+                left: 0 !important;
+                transform: none; /* Removed !important to allow animation */
+                width: 100% !important;
+                height: 100% !important;
+                max-height: 100% !important;
+                border-radius: 0 !important;
+                padding: 20px !important;
+                padding-top: 70px !important; /* Space for fixed close button */
+                padding-bottom: 120px !important;
+                animation: slideInMobile 0.4s ease-out forwards;
+            }
+
+            @keyframes slideInMobile {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            
+            /* Fix Close Button to top-right so it's always visible */
+            .close-btn {
+                position: fixed !important;
+                top: 20px !important;
+                right: 20px !important;
+                z-index: 2005 !important;
+                background: rgba(0,0,0,0.6); /* Visible background */
+                color: white !important;
+                border-radius: 50%;
+                width: 44px;
+                height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+            }
+        }
+
+        /* Closing Animations */
+        .closing {
+            animation: fadeOutDesktop 0.4s ease-out forwards !important;
+        }
+        @keyframes fadeOutDesktop {
+            from { opacity: 1; transform: translate(-50%, -50%); }
+            to { opacity: 0; transform: translate(-50%, -55%); }
+        }
+        @media screen and (max-width: 768px) {
+            .closing {
+                animation: slideOutMobile 0.4s ease-in forwards !important;
+            }
+            @keyframes slideOutMobile {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <button class="theme-btn" onclick="toggleTheme()" title="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <div class="nav-links">
+            <a href="#" onclick="showHomeMessage(event)">Home</a>
+            <a href="#" onclick="toggleAbout(event)">About</a>
+            <a href="#" onclick="toggleSkills(event)">Skills</a>
+            <a href="#" onclick="toggleEducation(event)">Education</a>
+            <a href="#" onclick="toggleProjects(event)">Projects</a>
+            <a href="#" onclick="toggleContact(event)">Contact</a>
+        </div>
+    </nav>
+    
+    <div class="main-container">
+        <div class="profile-card">
+            <img src="phani.PNG" alt="Profile Picture">
+            <div class="profile-info">
+                <h1>Phaneendhar.Nittala</h1>
+                <p class="typing-text">Forensic Science <i class="fas fa-fingerprint" onclick="togglePulse(this)"></i></p>
+                <div class="action-buttons">
+                    <button class="btn" onclick="toggleData()">View My Data</button>
+                    <div class="cv-actions">
+                        <button class="cv-btn" onclick="togglePdf()" title="View CV">
+                            <i class="far fa-eye"></i>
+                        </button>
+                        <div class="cv-separator"></div>
+                        <a href="Resume - Phani.pdf" class="cv-btn" download title="Download CV">
+                            <i class="fas fa-download"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="data-container" id="profileData">
+                    <a href="mailto:nittalaphaneendhar@gmail.com" class="info-row">
+                        <i class="fas fa-envelope"></i>
+                        <span>nittalaphaneendhar@gmail.com</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/nittala-phaneendhar/" target="_blank" class="info-row">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                    <a href="https://github.com/NPhaneendhar" target="_blank" class="info-row">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Profile</span>
+                    </a>
+                    <a href="https://www.instagram.com/phani.49/" target="_blank" class="info-row">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <div class="info-row">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>India</span>
+                    </div>
+                </div>
+
+                <div id="pdfContainer" class="pdf-viewer">
+                    <div class="pdf-toolbar">
+                        <div class="pdf-title">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Resume Preview</span>
+                        </div>
+                        <div class="pdf-actions">
+                            <button class="pdf-expand-btn" onclick="toggleFullScreen()" title="Toggle Full Screen">
+                                <i class="fas fa-expand"></i>
+                            </button>
+                            <button class="pdf-close-btn" onclick="togglePdf()" title="Close Preview">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <iframe src="Resume%20-%20Phani.pdf" class="pdf-frame"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div id="aboutSection" class="about-card">
+            <button class="close-btn" onclick="closeCard('aboutSection')">&times;</button>
+            <h2>About Me</h2>
+            <p>I am a Forensic Science student with a strong passion for Digital Forensics, Cyber Investigations, and Web-based forensic tools.</p>
+            <p>Instead of only using existing forensic software, I focus on building my own platforms that help investigators, students, and researchers analyze digital evidence more effectively.</p>
+            <p>Coming from a B.Sc. Science background, I have actively mastered Computer Science concepts. This demonstrates my strong ability to learn new technologies and adapt to complex technical challenges.</p>
+            
+            <h3 class="text-highlight" style="margin-top: 24px; margin-bottom: 10px;">My Mission</h3>
+            <p style="margin-bottom: 15px;">To modernize forensic science using technology.</p>
+            
+            <p style="margin-bottom: 8px; font-weight: 500;">I combine:</p>
+            <ul class="about-list" style="margin-top: 0; padding-left: 20px; line-height: 1.6;">
+                <li>Forensic science knowledge</li>
+                <li>Web development expertise</li>
+                <li>Cyber & digital investigation logic</li>
+            </ul>
+            
+            <p style="margin-bottom: 8px; font-weight: 500; margin-top: 15px;">To create tools that can:</p>
+            <ul class="about-list" style="margin-top: 0; padding-left: 20px; line-height: 1.6;">
+                <li>Detect suspicious files</li>
+                <li>Analyze digital evidence</li>
+                <li>Generate forensic reports</li>
+                <li>Visualize investigation data</li>
+                <li>Support law-enforcement and academic research</li>
+            </ul>
+
+            <h3 class="text-highlight" style="margin-top: 24px; margin-bottom: 10px;">Why I Am Different</h3>
+            <p style="margin-bottom: 10px;">Most people learn forensic tools. <strong>I build forensic tools.</strong></p>
+            <p style="margin-bottom: 15px;">I don’t wait for software — I create it.<br>I don’t just analyze evidence — I design systems that analyze evidence.</p>
+            <p style="margin-bottom: 8px; font-weight: 500;">This makes me different because I understand:</p>
+            <ul class="about-list" style="margin-top: 0; padding-left: 20px; line-height: 1.6;">
+                <li>The science behind evidence</li>
+                <li>The technology behind analysis</li>
+                <li>The logic behind investigations</li>
+            </ul>
+
+            <h3 class="text-highlight" style="margin-top: 24px; margin-bottom: 10px;">My Vision</h3>
+            <p style="margin-bottom: 15px;">My long-term vision is to build a <strong>Digital Forensic Intelligence Platform</strong> that can help law-enforcement, courts, and forensic labs analyze digital crimes faster, smarter, and more accurately.</p>
+            <p style="margin-bottom: 8px; font-weight: 500;">I want my tools to be used in:</p>
+            <ul class="about-list" style="margin-top: 0; padding-left: 20px; line-height: 1.6;">
+                <li>Universities</li>
+                <li>Cybercrime units</li>
+                <li>Forensic labs</li>
+                <li>Research institutions</li>
+            </ul>
+        </div>
+
+        <div id="skillsSection" class="skills-card" style="display: none;">
+            <button class="close-btn" onclick="closeCard('skillsSection')">&times;</button>
+            <h3 class="text-highlight" style="margin-top: 0; margin-bottom: 15px;">Technical Skills</h3>
+            <div class="skill-item">
+                <div class="skill-info">
+                    <div class="skill-name">
+                        <i class="fas fa-search"></i>
+                        <span>Digital Forensics</span>
+                    </div>
+                </div>
+                <div class="skill-segments">
+                    <div class="segment filled" style="transition-delay: 0.1s"></div>
+                    <div class="segment filled" style="transition-delay: 0.2s"></div>
+                    <div class="segment filled" style="transition-delay: 0.3s"></div>
+                    <div class="segment filled" style="transition-delay: 0.4s"></div>
+                    <div class="segment filled" style="transition-delay: 0.5s"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info">
+                    <div class="skill-name">
+                        <i class="fas fa-code"></i>
+                        <span>Web Development</span>
+                    </div>
+                </div>
+                <div class="skill-segments">
+                    <div class="segment filled" style="transition-delay: 0.1s"></div>
+                    <div class="segment filled" style="transition-delay: 0.2s"></div>
+                    <div class="segment filled" style="transition-delay: 0.3s"></div>
+                    <div class="segment filled" style="transition-delay: 0.4s"></div>
+                    <div class="segment"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info">
+                    <div class="skill-name">
+                        <i class="fas fa-user-secret"></i>
+                        <span>Cyber Investigation</span>
+                    </div>
+                </div>
+                <div class="skill-segments">
+                    <div class="segment filled" style="transition-delay: 0.1s"></div>
+                    <div class="segment filled" style="transition-delay: 0.2s"></div>
+                    <div class="segment filled" style="transition-delay: 0.3s"></div>
+                    <div class="segment filled" style="transition-delay: 0.4s"></div>
+                    <div class="segment"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info">
+                    <div class="skill-name">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Network Analysis</span>
+                    </div>
+                </div>
+                <div class="skill-segments">
+                    <div class="segment filled" style="transition-delay: 0.1s"></div>
+                    <div class="segment filled" style="transition-delay: 0.2s"></div>
+                    <div class="segment filled" style="transition-delay: 0.3s"></div>
+                    <div class="segment" style="transition-delay: 0.4s"></div>
+                    <div class="segment"></div>
+                </div>
+            </div>
+
+            <h3 class="text-highlight" style="margin-top: 24px; margin-bottom: 15px;">Forensic Skills</h3>
+            <div class="tech-stack">
+                <div class="tech-badge"><i class="fas fa-fingerprint"></i> Fingerprint Analysis</div>
+                <div class="tech-badge"><i class="fas fa-microscope"></i> Fiber Analysis</div>
+                <div class="tech-badge"><i class="fas fa-bullseye"></i> Ballistics</div>
+                <div class="tech-badge"><i class="fas fa-file-signature"></i> Document Examination</div>
+            </div>
+
+            <h3 class="text-highlight" style="margin-top: 24px; margin-bottom: 15px;">Languages & Technologies</h3>
+            
+            <h4 class="section-category">Frontend</h4>
+            <div class="tech-stack" style="margin-top: 5px; margin-bottom: 15px;">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" class="tech-badge"><i class="fab fa-html5"></i> HTML</a>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" class="tech-badge"><i class="fab fa-css3-alt"></i> CSS</a>
+            </div>
+
+            <h4 class="section-category">Backend & Database</h4>
+            <div class="tech-stack" style="margin-top: 5px; margin-bottom: 15px;">
+                <a href="https://www.python.org/" target="_blank" class="tech-badge"><i class="fab fa-python"></i> Python</a>
+                <a href="https://firebase.google.com/" target="_blank" class="tech-badge"><i class="fas fa-fire"></i> Firebase</a>
+                <a href="https://www.mongodb.com/" target="_blank" class="tech-badge"><i class="fas fa-database"></i> MongoDB</a>
+            </div>
+
+            <h4 class="section-category">Mobile</h4>
+            <div class="tech-stack" style="margin-top: 5px; margin-bottom: 15px;">
+                <a href="https://flutter.dev/" target="_blank" class="tech-badge"><i class="fas fa-mobile-alt"></i> Flutter (Basics)</a>
+            </div>
+
+            <h4 class="section-category">Tools</h4>
+            <div class="tech-stack" style="margin-top: 5px;">
+                <a href="https://git-scm.com/" target="_blank" class="tech-badge"><i class="fab fa-git-alt"></i> Git</a>
+                <a href="https://portswigger.net/burp" target="_blank" class="tech-badge"><i class="fas fa-bug"></i> Burp Suite</a>
+                <a href="https://www.wireshark.org/" target="_blank" class="tech-badge"><i class="fas fa-network-wired"></i> Wireshark</a>
+                <a href="https://www.autopsy.com/" target="_blank" class="tech-badge"><i class="fas fa-search-plus"></i> Autopsy</a>
+                <a href="https://www.exterro.com/ftk-imager" target="_blank" class="tech-badge"><i class="fas fa-hdd"></i> FTK Imager</a>
+                <a href="https://volatilityfoundation.org/" target="_blank" class="tech-badge"><i class="fas fa-memory"></i> Volatility</a>
+            </div>
+        </div>
+
+        <div id="educationSection" class="education-card" style="display: none;">
+            <button class="close-btn" onclick="closeCard('educationSection')">&times;</button>
+            <h2>Education History</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - 2026</div>
+                    <div class="timeline-content">
+                        <h4>B.Sc. Forensic Science</h4>
+                        <p>Centurion University of Technology and Management A.P</p>
+                        <p style="font-size: 13px; margin-top: 5px;">Specialized in Digital Forensics and Cyber Investigations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2021 - 2023</div>
+                    <div class="timeline-content">
+                        <h4>Intermediate (BiPC)</h4>
+                        <p>Aditya Junior College</p>
+                        <p style="font-size: 13px; margin-top: 5px;">Biology, Physics, and Chemistry.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2020 - 2021</div>
+                    <div class="timeline-content">
+                        <h4>Secondary School Education</h4>
+                        <p>Bradlaugh Public School</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="projectsSection" class="projects-card" style="display: none;">
+            <button class="close-btn" onclick="closeCard('projectsSection')">&times;</button>
+            <h2>My Work</h2>
+            <div class="project-item" data-category="web forensics tools">
+                <div class="project-header">
+                    <h3 style="margin: 0;">
+                        <a href="https://p-h-a-n-i-x-investigation-e-xpert.vercel.app/" target="_blank" class="project-title-link">
+                            <i class="fas fa-user-secret"></i> PHANIX Investigation Expert
+                        </a>
+                    </h3>
+                    <a href="https://p-h-a-n-i-x-investigation-e-xpert.vercel.app/" target="_blank" class="btn" style="padding: 6px 16px; font-size: 12px; margin: 0;">Launch Tool</a>
+                </div>
+                <p>Phanix is a comprehensive web-based Digital Forensics & Cyber Investigation platform. It empowers investigators with a suite of browser-based tools to analyze digital evidence, verify integrity, and uncover hidden data without installing complex software.</p>
+                
+                <ul class="feature-list">
+                    <li class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span class="feature-title">Integrity Scanner</span>
+                        <div class="feature-desc">Calculates cryptographic hashes (MD5, SHA-256) to verify that digital evidence remains unaltered and authentic.</div>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-balance-scale"></i>
+                        <span class="feature-title">Comparison Tool</span>
+                        <div class="feature-desc">Performs bit-by-bit comparison between files to detect unauthorized modifications or data corruption.</div>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-search"></i>
+                        <span class="feature-title">Metadata Analyzer</span>
+                        <div class="feature-desc">Extracts hidden EXIF and data from images to reveal device details, timestamps, and geolocation.</div>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-image"></i>
+                        <span class="feature-title">Steganography</span>
+                        <div class="feature-desc">Analyzes images to detect hidden messages or payloads using LSB (Least Significant Bit) analysis.</div>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-key"></i>
+                        <span class="feature-title">Password Audit</span>
+                        <div class="feature-desc">Evaluates password strength entropy and simulates dictionary attacks to identify weak credentials.</div>
+                    </li>
+                    <li class="feature-item">
+                        <i class="fas fa-network-wired"></i>
+                        <span class="feature-title">Network Logs</span>
+                        <div class="feature-desc">Parses and visualizes network traffic logs to identify suspicious IP connections and potential anomalies.</div>
+                    </li>
+                </ul>
+
+                <h4 class="section-category" style="margin-top: 25px; margin-bottom: 15px;">Case Studies</h4>
+                
+                <div class="case-study">
+                    <h5><i class="fas fa-file-pdf"></i> PDF Report Generator</h5>
+                    <p>Generates detailed forensic reports in PDF format, summarizing analysis results for documentation and legal presentation.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="contactSection" class="contact-card" style="display: none;">
+            <button class="close-btn" onclick="closeCard('contactSection')">&times;</button>
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out for collaborations or just a friendly hello!</p>
+            <form class="contact-form" action="mailto:nittalaphaneendhar@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </div>
+    <div id="homeToast" class="toast-notification">Yes, you are in the right place! 🚀</div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/nittala-phaneendhar/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/NPhaneendhar" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/phani.49/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:nittalaphaneendhar@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <div class="footer-text">
+                &copy; 2025 Phaneendhar Nittala.
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script>
+        function toggleFullScreen() {
+            const elem = document.getElementById('pdfContainer');
+            if (!document.fullscreenElement) {
+                elem.requestFullscreen().catch(err => {
+                    console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        document.addEventListener('fullscreenchange', () => {
+            const btn = document.querySelector('.pdf-expand-btn');
+            const icon = btn.querySelector('i');
+            
+            if (document.fullscreenElement) {
+                icon.classList.remove('fa-expand');
+                icon.classList.add('fa-compress');
+                btn.title = "Exit Full Screen";
+            } else {
+                icon.classList.remove('fa-compress');
+                icon.classList.add('fa-expand');
+                btn.title = "Toggle Full Screen";
+            }
+        });
+
+        // Function to handle closing animations
+        function closeCard(cardId) {
+            const card = document.getElementById(cardId);
+            if (card) {
+                card.classList.add('closing');
+                setTimeout(() => {
+                    card.style.display = 'none';
+                    card.classList.remove('closing');
+                }, 400); // Match animation duration
+            }
+        }
+    </script>
+</body>
+</html>
