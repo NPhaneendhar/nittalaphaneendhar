@@ -192,4 +192,30 @@ function toggleTheme() {
 
 function togglePulse(element) {
     element.classList.toggle('pulse-animation');
+
+}
+function downloadVCard() {
+    const vCardData = [
+        'BEGIN:VCARD',
+        'VERSION:3.0',
+        'FN:Phaneendhar Nittala',
+        'N:Nittala;Phaneendhar;;;',
+        'TITLE:Digital Forensics & Cyber Security Specialist',
+        'EMAIL;TYPE=INTERNET;TYPE=WORK:nittalaphaneendhar@gmail.com',
+        'URL:https://nphaneendhar.github.io',
+        'URL;type=LinkedIn:https://www.linkedin.com/in/nittala-phaneendhar/',
+        'URL;type=GitHub:https://github.com/NPhaneendhar',
+        'ADR;TYPE=HOME:;;India;;;;',
+        'END:VCARD'
+    ].join('\n');
+
+    const blob = new Blob([vCardData], { type: 'text/vcard' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'Phaneendhar_Nittala.vcf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
 }
